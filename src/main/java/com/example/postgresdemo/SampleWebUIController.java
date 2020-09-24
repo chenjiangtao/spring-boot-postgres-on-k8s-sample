@@ -33,9 +33,10 @@ public class SampleWebUIController {
     public ModelAndView save(@RequestParam("value")String value,
                              RedirectAttributes redirect) {
         List<Value> values = (List<Value>) repository.findAll();
-        if (!values.isEmpty()) {
-            repository.delete(values.get(0));
-        }
+        //if (!values.isEmpty()) {
+        //    repository.delete(values.get(0));
+        //}
+
         repository.save(new Value(value));
         return new ModelAndView("redirect:/");
     }
